@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<body>
+
+<!-- <div ng-app="myApp" ng-controller="myCtrl">
+Name: <input ng-model="name">
+</div>
+
+<script>
+var app = angular.module('myApp', []);
+app.controller('myCtrl', function($scope) {
+    $scope.name = "Nitin Suman";
+});
+</script> -->
+
+<!-- 
+   two way binding
+
+   <div ng-app="myApp" ng-controller="myCtrl">
+   Name: <input ng-model="firstname">
+   <h1>{{firstname}}</h1>
+</div>
+
+<script>
+var app = angular.module('myApp', []);
+app.controller('myCtrl', function($scope) {
+   $scope.firstname = "Cybge";
+   $scope.lastname = "Software";    
+});
+</script> -->
+
+
+<!-- controllers
+
+<div ng-app="myApp" ng-controller="personCtrl">
+
+   First Name: <input type="text" ng-model="firstName"><br>
+   Last Name: <input type="text" ng-model="lastName"><br>
+   <br>
+   Full Name: {{fullName()}}
+   
+   </div>
+   
+   <script>
+   var app = angular.module('myApp', []);
+   app.controller('personCtrl', function($scope) {
+       $scope.firstName = "Nitin";
+       $scope.lastName = "Suman";
+       $scope.fullName = function() {
+           return $scope.firstName + " " + $scope.lastName;
+       };
+   });
+   </script> -->
+<!-- 
+   Directives
+   <div ng-app = "" ng-init = "countries = [{locale:'en-US',name:'United States'}, 
+         {locale:'en-GB',name:'United Kingdom'}, {locale:'en-FR',name:'France'}]"> 
+         <p>Enter your Name: <input type = "text" ng-model = "name"></p>
+         <p>Hello <span ng-bind = "name"></span>!</p>
+         <p>List of Countries with locale:</p>
+      
+         <ol>
+            <li ng-repeat = "country in countries">
+               {{ 'Country: ' + country.name + ', Locale: ' + country.locale }}
+            </li>
+         </ol>
+      </div>
+       -->
+<!-- fileters
+
+
+<body>
+   <h2>AngularJS Sample Application</h2>
+   
+   <div ng-app = "mainApp" ng-controller = "studentController">
+      <table border = "0">
+         <tr>
+            <td>Enter first name:</td>
+            <td><input type = "text" ng-model = "student.firstName"></td>
+         </tr>
+         <tr>
+            <td>Enter last name: </td>
+            <td><input type = "text" ng-model = "student.lastName"></td>
+         </tr>
+         <tr>
+            <td>Enter fees: </td>
+            <td><input type = "text" ng-model = "student.fees"></td>
+         </tr>
+         <tr>
+            <td>Enter subject: </td>
+            <td><input type = "text" ng-model = "subjectName"></td>
+         </tr>
+      </table>
+      <br/>
+      
+      <table border = "0">
+         <tr>
+            <td>Name in Upper Case: </td><td>{{student.fullName() | uppercase}}</td>
+         </tr>
+         <tr>
+            <td>Name in Lower Case: </td><td>{{student.fullName() | lowercase}}</td>
+         </tr>
+         <tr>
+            <td>fees: </td><td>{{student.fees | currency}}
+            </td>
+         </tr>
+         <tr>
+            <td>Subject:</td>
+            <td>
+               <ul>
+                  <li ng-repeat = "subject in student.subjects | filter: subjectName |orderBy:'marks'">
+                     {{ subject.name + ', marks:' + subject.marks }}
+                  </li>
+               </ul>
+            </td>
+         </tr>
+      </table>
+   </div>
+   
+   <script>
+      var mainApp = angular.module("mainApp", []);
+      
+      mainApp.controller('studentController', function($scope) {
+         $scope.student = {
+            firstName: "Mahesh",
+            lastName: "Parashar",
+            fees:500,
+            
+            subjects:[
+               {name:'Physics',marks:70},
+               {name:'Chemistry',marks:80},
+               {name:'Math',marks:65}
+            ],
+            fullName: function() {
+               var studentObject;
+               studentObject = $scope.student;
+               return studentObject.firstName + " " + studentObject.lastName;
+            }
+         };
+      });
+   </script> -->
+<!-- 
+   Expressions
+
+   <div ng-app = "" ng-init = "quantity = 1;cost = 30; 
+   student = {firstname:'Mahesh',lastname:'Parashar',rollno:101};
+   marks = [80,90,75,73,60]">
+   <p>Hello {{student.firstname + " " + student.lastname}}!</p>
+   <p>Expense on Books : {{cost * quantity}} Rs</p>
+   <p>Roll No: {{student.rollno}}</p>
+   <p>Marks(Math): {{marks[3]}}</p>
+</div> -->
+
+
+</body>
+</html>
